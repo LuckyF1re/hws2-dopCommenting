@@ -8,12 +8,14 @@
 }
 
 .input {
+    background-color: aquamarine;
 }
 
 .input:focus {
 }
 
 .errorInput {
+    background-color: red;
 }
 
 .button {
