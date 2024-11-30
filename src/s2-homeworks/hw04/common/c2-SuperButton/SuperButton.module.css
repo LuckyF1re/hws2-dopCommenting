@@ -2,35 +2,46 @@
 }
 
 .disabled {
+    background-color: darkslategrey;
 }
 
 .secondary {
+    background-color: white;
 }
 
 .default {
+    background-color: blue;
 }
 
 .red {
+    background-color: red;
 }
 
 .default:hover {
+    background-color: darkblue;
 }
 
 .red:hover {
+    background-color: darkred;
 }
 
 .secondary:hover {
+    background-color: navajowhite;
 }
 
 
 .default:active {
+    background-color: deepskyblue;
 }
 
 .secondary:active {
+    background-color: whitesmoke;
 }
 
 .red:active {
+    background-color: firebrick;
 }
 
 .button:disabled {
+    background-color: darkslategrey;
 }
