@@ -1,3 +1,32 @@
 .loader {
-    /*свг и/или анимация*/
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+
+.loader::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(
+            from 0deg,
+            transparent 0deg 30deg,
+            #8a2be2 30deg,
+            #da70d6 120deg,
+            white 240deg,
+            transparent 270deg
+    );
+    mask: radial-gradient(
+            farthest-side,
+            transparent calc(100% - 4px),
+            #000 calc(100% - 3px)
+    );
+    animation: reverse-rotate 1.8s linear infinite;
+}
+
+@keyframes reverse-rotate {
+    to {
+        transform: rotate(-360deg);
+    }
 }
