@@ -74,6 +74,9 @@ const HW13 = () => {
                     setInfo('Request failed')
                 }
             })
+            .finally(() => {
+                setIsLoading(false)
+            })
     }
 
     return (
