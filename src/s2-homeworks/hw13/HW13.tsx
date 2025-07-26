@@ -27,9 +27,10 @@ const HW13 = () => {
         setIsLoading(true)
 
         const url =
-            x === null
-                ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
-                : 'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test'
+           x === null
+               ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
+                : 'https://samurai.it-incubator.io/api/3.0/homework/test'
+
 
         setCode('')
         setImage('')
@@ -44,6 +45,7 @@ const HW13 = () => {
                 // дописать
                 setText(res.data.errorText || res.data.info)
                 setInfo(res.data.info)
+                setIsLoading(false)
             })
             .catch((e) => {
                 // дописать
@@ -54,11 +56,13 @@ const HW13 = () => {
                         setImage(error400)
                         setText(e.response.data.errorText)
                         setInfo(e.response.data.info)
+                        setIsLoading(false)
                     } else if (e.response.status === 500) {
                         setCode('Ошибка 500!')
                         setImage(error500)
                         setText(e.response.data.errorText)
                         setInfo(e.response.data.info)
+                        setIsLoading(false)
                     }
                 } else if (e.request) {
                     // Запрос был сделан, но ответа не было
@@ -66,17 +70,17 @@ const HW13 = () => {
                     setImage(errorUnknown)
                     setText('Network Error')
                     setInfo('No response received')
+                    setIsLoading(false)
                 } else {
                     // Что-то пошло не так при настройке запроса
                     setCode('Error!')
                     setImage(errorUnknown)
                     setText(e.message)
                     setInfo('Request failed')
+                    setIsLoading(false)
                 }
             })
-            .finally(() => {
-                setIsLoading(false)
-            })
+
     }
 
     return (
@@ -90,6 +94,7 @@ const HW13 = () => {
                         onClick={send(true)}
                         xType={'secondary'}
                         // дописать
+                        disabled={isLoading}
 
                     >
                         Send true
