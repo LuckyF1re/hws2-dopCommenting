@@ -69,7 +69,7 @@ const HW13 = () => {
                     setCode('Error!')
                     setImage(errorUnknown)
                     setText('Network Error')
-                    setInfo('No response received')
+                    setInfo('Axios Error')
                     setIsLoading(false)
                 } else {
                     // Что-то пошло не так при настройке запроса
